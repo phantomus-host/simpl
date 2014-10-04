@@ -1,0 +1,25 @@
+{{! 
+
+    This file contains a header section for your blog, which performs a match on locale to 
+    display appropriate content. You can add as many locales as you like using #phantomus_match_locale helper.
+
+}}
+
+
+{{#if @blog.logo}}
+    <div class="nav-logo">
+        <div class="nav-img" style="background-image: url({{@blog.logo}})"></div>
+    </div>
+{{/if}}
+
+{{#phantomus_match_locale locale="es"}}
+
+    <div class="title"><a href="{{@blog.url}}">Simpl Theme By Phantomus</a></div>
+    <div class="desc">Un tema limpio para Phantomus Pages, muestra lo fácil que es incluir el soporte multi-lenguaje en su blog. Mensajes etiquetados con el código de idioma para que pueda escribir los mensajes en varios idiomas.</div>
+
+{{else}}
+
+    <div class="title"><a href="{{@blog.url}}">Simpl Theme By Phantomus</a></div>
+    <div class="desc">A clean theme for Phantomus Pages, shows how easy it is to include multi-language support into your blog. Posts are tagged with language code so you can write posts in multiple languages.</div>
+
+{{/phantomus_match_locale}}

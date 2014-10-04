@@ -1,0 +1,14 @@
+
+<nav class="pagination columns" role="pagination">
+    {{#if prev}}
+        {{#phantomus_ifequal equal_to=1 value=prev}}
+            <a class="newer-posts" href="/en/posts/">&larr;</a>
+        {{else}}
+            <a class="newer-posts" href="/en/posts/{{prev}}">&larr;</a>
+        {{/phantomus_ifequal}}
+    {{/if}}
+   <span class="page-number">página {{page}} de {{pages}}</span>
+    {{#if next}}
+        <a class="older-posts" href="/en/posts/{{next}}">&rarr;</a>
+    {{/if}}
+</nav>

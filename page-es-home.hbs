@@ -1,0 +1,32 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+<main class="content" role="main">
+
+    {{#post}}
+    
+    <div class="blog-container columns">
+        <div class="large-6 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+        
+            <div class="large-12 medium-12 small-12 columns no-sp-small">
+                
+                <div class="post-title">{{{title}}}</div>
+        
+                <div class="post-content">
+                    {{content}}
+                </div>
+        
+                <div class="post-nav">
+                    <a class="newer-posts" href="/">← CASA</a>
+                </div>
+    
+            </div>
+        
+        </div>
+    </div>
+    
+    {{/post}}
+
+</main>

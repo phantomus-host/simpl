@@ -1,0 +1,45 @@
+{{!< default}}
+
+
+<main class="content" role="main">
+
+    <div class="sep large-6 medium-8 small-11 large-centered medium-centered small-centered columns">
+        <span>publicaciones en el blog</span>
+    </div>
+    
+    <div class="blog-container columns">
+        <div class="large-6 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+            {{! Each post will be output using this markup }}
+            {{page}}
+            {{#foreach posts}}
+        
+            <div class="{{#if @first}} large-12 medium-12 no-sp-small {{else}} large-6 medium-6 {{/if}} small-12 columns blog-item {{#if @even}}no-sp-lm-left{{else}}no-sp-lm-right{{/if}}">
+                <div class="blog-post-title"><a href="{{url}}">{{{title}}}</a></div>
+                <div class="blog-post-date"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> by {{author.name}}</div>
+                <div class="blog-tags">
+                    <span class="blog-tag-desc">tagged with: </span>
+                    <ul class="blog-post-tags">
+                        {{#foreach tags}}
+                            {{#phantomus_ifequal equal_to="es" value=name}}
+                                {{! ignore locale specific tag }}
+                            {{else}}
+                                <li>{{name}}</li>
+                            {{/phantomus_ifequal}}
+                        {{/foreach}}
+                    </ul>
+                </div>
+                <div class="blog-excerpt">
+                    {{excerpt}}&hellip;
+                </div>
+            </div>
+
+            {{/foreach}}
+        
+            <div class="large-12 medium-12 small-12 large-centered medium-centered small-centered columns no-sp">
+                {{pagination name="es-blog"}}
+            </div>
+        
+        </div>
+    </div>
+
+</main>

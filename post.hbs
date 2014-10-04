@@ -1,0 +1,69 @@
+{{!< default}}
+
+<main class="content" role="main">
+    
+    {{#post}}
+    
+    <div class="blog-container columns">
+        <div class="large-6 medium-8 small-12 large-centered medium-centered small-centered columns no-sp">
+        
+            <div class="large-12 medium-12 small-12 columns no-sp-small">
+                
+                <div class="post-title">{{{title}}}</div>
+                <div class="blog-post-date"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> by {{author.name}}</div>
+                <div class="blog-tags">
+                    <span class="blog-tag-desc">tagged with: </span>
+                    <ul class="blog-post-tags">
+                        {{#foreach tags}}
+                            {{#phantomus_ifequal equal_to="en-featured|es-featured|en|es" value=name}}
+                                {{! ignore locale specific tag }}
+                            {{else}}
+                                <li>{{name}}</li>
+                            {{/phantomus_ifequal}}
+                        {{/foreach}}
+                    </ul>
+                </div>
+        
+                <div class="post-content">
+                    {{content}}
+                </div>
+        
+                <div class="post-nav">
+                    <a class="newer-posts" href="/en/posts/" onclick="javascript:window.history.back();return false;">← BACK</a>
+                </div>
+    
+            </div>
+        
+        </div>
+    </div>
+    
+    <footer class="columns">
+        
+        <div class="large-12 medium-12 small-12 columns no-sp-small">
+        {{#has tag="en, en-featured"}}
+            <div class="sep large-6 medium-8 small-11 large-centered medium-centered small-centered columns">
+                <span>about the author</span>
+            </div>
+        {{/has}}
+    
+        {{#has tag="es, es-featured"}}
+            <div class="sep large-6 medium-8 small-11 large-centered medium-centered small-centered columns">
+                <span>sobre el autor</span>
+            </div>
+        {{/has}}
+        </div>
+    
+        <div class="large-12 medium-12 small-12 columns no-sp-small">
+            <div class="author large-6 medium-8 small-12 large-centered medium-centered small-centered columns">
+                <div class="post-author">
+                    <h4>{{author.name}}</h4>
+                    <p>{{author.bio}}</p>
+                </div>
+            </div>
+        </div>
+    
+    </footer>
+    
+    {{/post}}
+
+</main>

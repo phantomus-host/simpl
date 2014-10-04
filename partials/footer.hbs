@@ -1,0 +1,12 @@
+
+{{#phantomus_match_locale locale="es"}}
+
+    <section class="copyright">Contenido copyright {{@blog.title}} &copy; {{date format="YYYY"}} &bull; Reservados todos los derechos.</section>
+    <section class="poweredby">Publicado Orgullosamente con <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+
+{{else}}
+
+    <section class="copyright">All content copyright {{@blog.title}} &copy; {{date format="YYYY"}} &bull; All rights reserved.</section>
+    <section class="poweredby">Proudly published with <a class="icon-ghost" href="http://ghost.org">Ghost</a></section>
+
+{{/phantomus_match_locale}}

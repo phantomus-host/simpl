@@ -1,0 +1,38 @@
+{
+    "paths": {
+    
+        "/": "en-home",
+        "/es/home/": "es-home",
+        "/en/posts/": "en-home",
+        "/es/posts/": "es-home", 
+        "/en/about/": "en-about",
+        "/es/about/": "es-about"
+    }, 
+    
+    "mapping": {
+    
+        "en-home": {
+            "tagged": true,
+            "slug": "[en]en",
+            "title": "Welcome to Simpl for Phantomus Pages"
+        },
+    
+        "es-home": {
+            "tagged": true,
+            "slug": "[es]es",
+            "title": "Bienvenido a Simpl para Phantomus Pages"
+        }, 
+    
+        "en-about": {
+            "staticPage": true,
+            "path": "[en]/en-home/"
+        },
+    
+        "es-about": {
+            "staticPage": true,
+            "path": "[es]/es-home/"
+        }
+    
+    }
+    
+}
